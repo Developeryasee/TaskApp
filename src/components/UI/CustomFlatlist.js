@@ -5,11 +5,11 @@ const CustomFlatList = ({
   length,
   data,
   renderItem,
-  keyExtractor = (item, index) => index.toString(),
   onRefresh,
   refreshing = false,
   emptyMessage = 'No data available',
 }) => {
+  
   return (
     <FlatList
       showsVerticalScrollIndicator={false}
@@ -21,7 +21,7 @@ const CustomFlatList = ({
         alignItems: "center"
       }]}
       data={data}
-      keyExtractor={keyExtractor}
+      keyExtractor={(item) => item._id}
       renderItem={renderItem}
       stickyHeaderIndices={[0]}
       ItemSeparatorComponent={<View style={{ height: 15 }} />}

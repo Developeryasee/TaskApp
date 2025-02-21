@@ -39,7 +39,7 @@ export default function SignupScreen({ navigation }) {
                 setError(false);
                 let body = {
                     "username":name,
-                    "email": email,
+                    "email": email.toLowerCase(),
                     "password": password
                 }
 

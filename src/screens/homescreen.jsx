@@ -37,20 +37,29 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.itemDesc} numberOfLines={2}>{item.description}</Text>
         </CustomButton>
     )
+    
     return (
         <View style={[globalStyles.container, { paddingTop: top ? top : 20 }]}>
 
             <CustomHeader screen={"home"} title={userdata?.username} navigation={navigation}/>
             <View style={styles.listcontainer}>
                 {
-                    loading==="succeeded" && <CustomFlatlist
+                    
+                    tasklist.length>0?
+                    <CustomFlatlist
                         length={tasklist.length}
                         data={tasklist}
                         emptyMessage="No Ongoing Task"
                         renderItem={renderItem}
                         onRefresh={getAllTask}
                         refreshing={loading === "pending"}
-                    />
+                    />:<>
+                    <Text style={{ textAlign: 'center', alignSelf: 'center', color: '#fff',fontFamily: 'Poppins-Regular', }}>No Ongoing Task</Text>
+                    <CustomButton onPress={getAllTask} style={{marginTop:20}}>
+                    <Text style={{ textAlign: 'center', alignSelf: 'center', color: '#FED36A',fontFamily: 'Poppins-Regular', }} >Refresh</Text>
+
+                    </CustomButton>
+                    </>
                 }
 
 

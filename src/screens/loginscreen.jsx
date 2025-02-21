@@ -38,7 +38,7 @@ export default function LoginScreen({ navigation }) {
                 setErrorPassword("");
                 setError(false);
                 let body = {
-                    "email": email,
+                    "email": email.toLowerCase(),
                     "password": password
                 }
 
@@ -46,7 +46,6 @@ export default function LoginScreen({ navigation }) {
                 
                 if (responce.status === 200) {
                     if (responce.data?.message === "Login successful") {
-                        console.log(responce.data?.token);
                         
                         await authService.setAuthToken(responce.data?.token);
                         setLoad(false);

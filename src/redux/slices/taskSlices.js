@@ -19,6 +19,7 @@ const taskSlices = createSlice({
     initialState,
     reducers:{
         insertnewTask:(state,action)=>{
+            
             state.tasklist.push(action.payload);
         },
         updateTaskByID: (state, action) => {

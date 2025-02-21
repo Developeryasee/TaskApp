@@ -8,7 +8,6 @@ class task {
     createTask(body) {
         return new Promise((resolve, reject) => {
             apiInstance.post("tasks",body).then(res => {
-                console.log(res);
                 
                 resolve(res);
             }).catch(ex => {

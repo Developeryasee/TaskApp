@@ -13,7 +13,6 @@ class auth {
     this.authToken = 'Bearer ' + token
     apiInstance.setHeader('Authorization', this.authToken);
     await AsyncStorage.setItem("AuthToken", this.authToken).then((res) => {
-      console.log("token set");
       
     })
       .catch(ex => {
