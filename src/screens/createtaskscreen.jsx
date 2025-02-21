@@ -70,7 +70,7 @@ export default function CreateTaskScreen({ navigation }) {
             />
             <CustomTextInput
                 value={description}
-                label="Task Details"
+                label="Description"
                 style={styles.inputcontainer}
                 inputstyle={styles.input}
                 multiline={true}

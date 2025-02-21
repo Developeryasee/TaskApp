@@ -108,7 +108,7 @@ export default function EditTaskScreen({ navigation, route }) {
             />
             <CustomTextInput
                 value={description}
-                label="Task Details"
+                label="Description"
                 style={styles.inputcontainer}
                 inputstyle={styles.input}
                 multiline={true}
